@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      server:
+       git:
+          uri: https://github.com/jgpreetham/config
+          search-paths:
+          - config-data 
+   
+management:
+  security:
+    enabled: false
+server:
+  port: 8888
