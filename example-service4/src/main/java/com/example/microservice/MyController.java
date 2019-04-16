@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 @RestController
 class ExampleController {
 
@@ -18,8 +20,13 @@ class ExampleController {
 	
 	
 	@GetMapping(value="/{word}")
+	@HystrixCommand(fallbackMethod = "defaultTranslate")
 	public String translateTheWord(@PathVariable("word") String word){
 		String translatedWord = client.translateWord(word);
 		return translatedWord;
+	}
+	
+	public String defaultTranslate(@PathVariable("word") String word){
+		return "Hystrix default fallback response: "+word;
 	}
 }
