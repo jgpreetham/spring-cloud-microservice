@@ -13,11 +13,6 @@ class ExampleController {
 	@Autowired
 	private ExampleService5Client client;
 
-	@GetMapping
-	public String sayValue() {
-		return "Hi from Controller";
-	}
-	
 	
 	@GetMapping(value="/{word}")
 	@HystrixCommand(fallbackMethod = "defaultTranslate")
