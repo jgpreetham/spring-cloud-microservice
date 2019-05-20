@@ -36,9 +36,17 @@ In real world scenario there would be 100-1000 microservices and it's not practi
 
 ####  Points to be noted
 Pre-requsite: Docker should be installed
-Download RabbitMQ docker image: docker pull rabbitmq
-Run: docker run -d --hostname my-rabbit --name some-rabbit -p 15762:15672 -p 5672:5672 rabbitmq:3-management
+Download RabbitMQ docker image: ```docker pull rabbitmq ```
 
+Start the Rabbit MQ by running the following command:
+```
+ docker run -d --hostname my-rabbit --name some-rabbit -p 15762:15672 -p 5672:5672 rabbitmq:3-management
+```
+Test RabbitMQ by hitting URL http://localhost:15762/#/ . 
+```
+Username: guest
+Password: guest
+```
 #### Spring cloud Bus testing for dynamic updates
 Now again restart your config server, example-service and example-service2. 
 * Test the value of example-service:http://localhost:8080
