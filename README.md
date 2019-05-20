@@ -61,7 +61,8 @@ Now again, test the example-service and example-service2
 
 #### Eureka Server testing
 **eureka-server**: Service Discovery
-Run exmaple-service3,exmaple-service4 and exmaple-service5 and notice that all the services are shown on eureka portal : http://localhost:8761/
+
+Run exmaple-service3, exmaple-service4 and exmaple-service5 and notice that all the services are shown on eureka portal : http://localhost:8761/
  
 #### Feign testing 
 **example-service4** uses Feign annotations to interact with **example-service5**
