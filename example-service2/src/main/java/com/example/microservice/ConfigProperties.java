@@ -7,16 +7,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RefreshScope
 public class ConfigProperties {
+    @Value("${config.someProperty}")
+    private String someProperty;
 
-	@Value("${config.property2}")
-	private String someProperty;
+    public String getSomeProperty() {
+        return someProperty;
+    }
 
-	public String getSomeProperty() {
-		return someProperty;
-	}
-
-	public void setSomeProperty(String someProperty) {
-		this.someProperty = someProperty;
-	}
-
+    public void setSomeProperty(String someProperty) {
+        this.someProperty = someProperty;
+    }
 }
