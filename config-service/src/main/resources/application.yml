@@ -3,12 +3,20 @@ spring:
     config:
       server:
        git:
-          uri: https://github.com/jgpreetham/config
+          default-label: master
+          uri: https://github.com/jgpreetham/config.git
           search-paths:
-          - config-data 
-   
+          - config-data
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
 management:
   security:
     enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh
 server:
   port: 8888
