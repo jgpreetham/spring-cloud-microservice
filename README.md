@@ -71,7 +71,7 @@ Run exmaple-service3, exmaple-service4 and exmaple-service5, api-gateway and not
  
  #### Client Side load balancing testing
  * Start 2 profiles(default and test) of example-service5. Hit http://localhost:8114/hello, feign would call example-service5 @GetMapping(value = "/translate/{word}") of different instances(default and test) automatically and you can verify by looking at the port number returned in the response.
- * 
+ 
 #### Circuit Breaker testing
  * Test circuit breaker by stopping example-service5 and hitting example-service4 http://localhost:8114/hello , this would go to fallback and give the result
 
