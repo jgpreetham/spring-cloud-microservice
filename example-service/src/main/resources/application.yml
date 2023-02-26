@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: example-service
+  config:
+    import: optional:configserver:http://localhost:8888
+
+management:
+  security:
+    enabled: false

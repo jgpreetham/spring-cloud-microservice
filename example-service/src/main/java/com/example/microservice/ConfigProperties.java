@@ -18,5 +18,4 @@ public class ConfigProperties {
 	public void setSomeProperty(String someProperty) {
 		this.someProperty = someProperty;
 	}
-
 }
